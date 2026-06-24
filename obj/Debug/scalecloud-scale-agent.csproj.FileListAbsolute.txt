@@ -1,0 +1,9 @@
+D:\My Projects\scalecloud\scalecloud-scale-agent\bin\Debug\scalecloud-scale-agent.exe.config
+D:\My Projects\scalecloud\scalecloud-scale-agent\bin\Debug\scalecloud-scale-agent.exe
+D:\My Projects\scalecloud\scalecloud-scale-agent\bin\Debug\scalecloud-scale-agent.pdb
+D:\My Projects\scalecloud\scalecloud-scale-agent\obj\Debug\scalecloud-scale-agent.csproj.AssemblyReference.cache
+D:\My Projects\scalecloud\scalecloud-scale-agent\obj\Debug\scalecloud_scale_agent.Properties.Resources.resources
+D:\My Projects\scalecloud\scalecloud-scale-agent\obj\Debug\scalecloud-scale-agent.csproj.GenerateResource.cache
+D:\My Projects\scalecloud\scalecloud-scale-agent\obj\Debug\scalecloud-scale-agent.csproj.CoreCompileInputs.cache
+D:\My Projects\scalecloud\scalecloud-scale-agent\obj\Debug\scalecloud-scale-agent.exe
+D:\My Projects\scalecloud\scalecloud-scale-agent\obj\Debug\scalecloud-scale-agent.pdb
