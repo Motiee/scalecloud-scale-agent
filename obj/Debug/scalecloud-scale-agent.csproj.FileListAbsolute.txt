@@ -7,3 +7,5 @@ D:\My Projects\scalecloud\scalecloud-scale-agent\obj\Debug\scalecloud-scale-agen
 D:\My Projects\scalecloud\scalecloud-scale-agent\obj\Debug\scalecloud-scale-agent.csproj.CoreCompileInputs.cache
 D:\My Projects\scalecloud\scalecloud-scale-agent\obj\Debug\scalecloud-scale-agent.exe
 D:\My Projects\scalecloud\scalecloud-scale-agent\obj\Debug\scalecloud-scale-agent.pdb
+D:\My Projects\scalecloud\scalecloud-scale-agent\bin\Debug\Fleck.dll
+D:\My Projects\scalecloud\scalecloud-scale-agent\obj\Debug\scaleclo.656135BE.Up2Date
