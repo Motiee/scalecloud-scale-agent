@@ -61,7 +61,7 @@ namespace scalecloud_scale_agent.Channels
                 _settings = settings;
 
                 _protocol = ScaleProtocolRegistry.Create(
-                    settings.ProtocolId);
+                    settings.Protocol.ProtocolId);
             }
         }
 

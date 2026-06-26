@@ -1,20 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace scalecloud_scale_agent.Serial
 {
     public interface ISerialReader : IDisposable
     {
-        event Action<byte> ByteReceived;
-
-        event Action<string> Error;
-
         bool IsRunning { get; }
 
-        void Start();
+        event Action<byte> ByteReceived;
+
+        event Action<Exception> Error;
+
+        void Start(
+            string portName,
+            int baudRate,
+            System.IO.Ports.Parity parity,
+            int dataBits,
+            System.IO.Ports.StopBits stopBits);
 
         void Stop();
     }

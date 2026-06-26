@@ -1,3 +1,6 @@
 <Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".gitignore" />
+  </Folder>
   <Project Path="scalecloud-scale-agent.csproj" Id="32f5ca9a-f5d5-437b-b1d4-59caa6ff612b" />
 </Solution>

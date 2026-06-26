@@ -1,8 +1,7 @@
-﻿using scalecloud_scale_agent.Tray;
+﻿using scalecloud_scale_agent.Managers;
+using scalecloud_scale_agent.Settings;
+using scalecloud_scale_agent.Tray;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace scalecloud_scale_agent
@@ -13,9 +12,14 @@ namespace scalecloud_scale_agent
         static void Main()
         {
             Application.EnableVisualStyles();
+
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new TrayApplicationContext());
+            var settingsRepository = new JsonSettingsRepository();
+
+            var scaleManager =new ScaleManager(settingsRepository);
+
+            Application.Run(new TrayApplicationContext(scaleManager));
         }
     }
 }

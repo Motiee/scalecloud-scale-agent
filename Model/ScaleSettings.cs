@@ -7,21 +7,21 @@ using System.Threading.Tasks;
 
 namespace scalecloud_scale_agent.Model
 {
+    // TODO (2026-06):
+    // Version 2:
+    // Make this class immutable.
+    // Settings should only be changed through ScaleChannel.ApplySettings()
+    // Convert ScaleSettings to immutable after SettingsRepository is implemented.
+    // Current mutable version keeps development simple while architecture is evolving.
+
     public class ScaleSettings
     {
-        public string PortName { get; set; }
-
-        public int BaudRate { get; set; }
-
-        public int DataBits { get; set; }
-
-        public Parity Parity { get; set; }
-
-        public StopBits StopBits { get; set; }
-
-        public string ProtocolId { get; set; }
+        public ScaleChannelId ChannelId { get; set; }
 
         public bool Enabled { get; set; } = true;
-        public int ReadTimeout { get; set; } = 500;
+
+        public SerialPortSettings SerialPort { get; set; }= new SerialPortSettings();
+
+        public ProtocolSettings Protocol { get; set; }= new ProtocolSettings();
     }
 }
