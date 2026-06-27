@@ -2,6 +2,7 @@
 using scalecloud_scale_agent.Channels.Interfaces;
 using scalecloud_scale_agent.Model;
 using scalecloud_scale_agent.Settings.Interfaces;
+using scalecloud_scale_agent.Settings.Validation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace scalecloud_scale_agent.Managers
         private readonly List<IScaleChannel> _channels;
 
         private readonly ISettingsRepository _settingsRepository;
+        private readonly IAgentSettingsValidator _validator;
 
         private AgentSettings _agentSettings;
 
@@ -21,9 +23,12 @@ namespace scalecloud_scale_agent.Managers
         public int ChannelCount => _channels.Count;
 
         public ScaleManager(
-            ISettingsRepository settingsRepository)
+            ISettingsRepository settingsRepository,
+            IAgentSettingsValidator validator)
+
         {
             _settingsRepository = settingsRepository;
+            _validator = validator;
 
             _channels = new List<IScaleChannel>
             {
@@ -34,14 +39,11 @@ namespace scalecloud_scale_agent.Managers
 
         public void LoadSettings()
         {
-            _agentSettings =
-                _settingsRepository.Load();
+            _agentSettings =_settingsRepository.Load();
 
-            GetChannel(ScaleChannelId.Bascule1)
-                .ApplySettings(_agentSettings.Channel1);
+            GetChannel(ScaleChannelId.Bascule1).ApplySettings(_agentSettings.Channel1);
 
-            GetChannel(ScaleChannelId.Bascule2)
-                .ApplySettings(_agentSettings.Channel2);
+            GetChannel(ScaleChannelId.Bascule2).ApplySettings(_agentSettings.Channel2);
         }
 
         public void SaveSettings()
@@ -51,18 +53,19 @@ namespace scalecloud_scale_agent.Managers
                 _agentSettings = new AgentSettings();
             }
 
-            _agentSettings.Channel1 =
-                GetChannel(
-                    ScaleChannelId.Bascule1)
-                .Settings;
+            _agentSettings.Channel1 = GetChannel(ScaleChannelId.Bascule1).Settings;
 
-            _agentSettings.Channel2 =
-                GetChannel(
-                    ScaleChannelId.Bascule2)
-                .Settings;
+            _agentSettings.Channel2 = GetChannel(ScaleChannelId.Bascule2).Settings;
 
-            _settingsRepository.Save(
-                _agentSettings);
+            ValidationResult validation =_validator.Validate(_agentSettings);
+
+            if (!validation.IsValid)
+            {
+                throw new InvalidOperationException(
+                    string.Join(Environment.NewLine,validation.Errors));
+            }
+
+            _settingsRepository.Save(_agentSettings);
         }
 
         public void Start()

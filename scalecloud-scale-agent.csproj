@@ -89,6 +89,8 @@
     <Compile Include="Settings\JsonSettingsRepository.cs" />
     <Compile Include="Settings\ScaleSettingsValidator.cs" />
     <Compile Include="Settings\SettingsPaths.cs" />
+    <Compile Include="Settings\Validation\AgentSettingsValidator.cs" />
+    <Compile Include="Settings\Validation\IAgentSettingsValidator.cs" />
     <Compile Include="Settings\Validation\IScaleSettingsValidator.cs" />
     <Compile Include="Settings\Validation\ScaleSettingsValidator.cs" />
     <Compile Include="Settings\Validation\ValidationError.cs" />

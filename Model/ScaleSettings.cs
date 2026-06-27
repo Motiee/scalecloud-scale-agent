@@ -16,6 +16,10 @@ namespace scalecloud_scale_agent.Model
 
     public class ScaleSettings
     {
+        public ScaleSettings()
+        {
+            ChannelId = ScaleChannelId.Unknown;
+        }
         public ScaleChannelId ChannelId { get; set; }
 
         public bool Enabled { get; set; } = true;

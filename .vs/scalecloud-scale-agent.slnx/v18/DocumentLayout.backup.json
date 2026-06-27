@@ -3,20 +3,16 @@
   "WorkspaceRootPath": "D:\\My Projects\\scalecloud\\scalecloud-scale-agent\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{32F5CA9A-F5D5-437B-B1D4-59CAA6FF612B}|scalecloud-scale-agent.csproj|d:\\my projects\\scalecloud\\scalecloud-scale-agent\\channels\\scalechannel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{32F5CA9A-F5D5-437B-B1D4-59CAA6FF612B}|scalecloud-scale-agent.csproj|D:\\My Projects\\scalecloud\\scalecloud-scale-agent\\channels\\scalechannel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{32F5CA9A-F5D5-437B-B1D4-59CAA6FF612B}|scalecloud-scale-agent.csproj|solutionrelative:channels\\scalechannel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{32F5CA9A-F5D5-437B-B1D4-59CAA6FF612B}|scalecloud-scale-agent.csproj|d:\\my projects\\scalecloud\\scalecloud-scale-agent\\tray\\trayapplicationcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{32F5CA9A-F5D5-437B-B1D4-59CAA6FF612B}|scalecloud-scale-agent.csproj|solutionrelative:tray\\trayapplicationcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{32F5CA9A-F5D5-437B-B1D4-59CAA6FF612B}|scalecloud-scale-agent.csproj|d:\\my projects\\scalecloud\\scalecloud-scale-agent\\managers\\scalemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{32F5CA9A-F5D5-437B-B1D4-59CAA6FF612B}|scalecloud-scale-agent.csproj|solutionrelative:managers\\scalemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{32F5CA9A-F5D5-437B-B1D4-59CAA6FF612B}|scalecloud-scale-agent.csproj|d:\\my projects\\scalecloud\\scalecloud-scale-agent\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{32F5CA9A-F5D5-437B-B1D4-59CAA6FF612B}|scalecloud-scale-agent.csproj|D:\\My Projects\\scalecloud\\scalecloud-scale-agent\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{32F5CA9A-F5D5-437B-B1D4-59CAA6FF612B}|scalecloud-scale-agent.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32F5CA9A-F5D5-437B-B1D4-59CAA6FF612B}|scalecloud-scale-agent.csproj|D:\\My Projects\\scalecloud\\scalecloud-scale-agent\\managers\\scalemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32F5CA9A-F5D5-437B-B1D4-59CAA6FF612B}|scalecloud-scale-agent.csproj|solutionrelative:managers\\scalemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -36,22 +32,9 @@
               "RelativeDocumentMoniker": "Channels\\ScaleChannel.cs",
               "ToolTip": "D:\\My Projects\\scalecloud\\scalecloud-scale-agent\\Channels\\ScaleChannel.cs",
               "RelativeToolTip": "Channels\\ScaleChannel.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAcwDUAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAACoAAAAAAAAAAAAtwDYAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-26T19:08:36.709Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TrayApplicationContext.cs",
-              "DocumentMoniker": "D:\\My Projects\\scalecloud\\scalecloud-scale-agent\\Tray\\TrayApplicationContext.cs",
-              "RelativeDocumentMoniker": "Tray\\TrayApplicationContext.cs",
-              "ToolTip": "D:\\My Projects\\scalecloud\\scalecloud-scale-agent\\Tray\\TrayApplicationContext.cs",
-              "RelativeToolTip": "Tray\\TrayApplicationContext.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAkwBkAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-26T19:07:20.443Z",
               "EditorCaption": ""
             },
             {
@@ -62,20 +45,20 @@
               "RelativeDocumentMoniker": "Managers\\ScaleManager.cs",
               "ToolTip": "D:\\My Projects\\scalecloud\\scalecloud-scale-agent\\Managers\\ScaleManager.cs",
               "RelativeToolTip": "Managers\\ScaleManager.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAwwCQAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAADgAAAAAAAAAAAAswC4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-26T19:07:11.036Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\My Projects\\scalecloud\\scalecloud-scale-agent\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "D:\\My Projects\\scalecloud\\scalecloud-scale-agent\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAQwA0AAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-26T19:05:56.572Z",
               "EditorCaption": ""

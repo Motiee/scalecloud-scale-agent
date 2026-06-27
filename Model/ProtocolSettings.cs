@@ -2,6 +2,6 @@
 {
     public class ProtocolSettings
     {
-        public string ProtocolId { get; set; }
+        public string ProtocolId { get; set; } = "Toledo8142";
     }
 }

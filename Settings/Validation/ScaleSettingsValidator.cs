@@ -23,6 +23,14 @@ namespace scalecloud_scale_agent.Settings.Validation
             if (!settings.Enabled)
                 return result;
 
+            if (settings.ChannelId ==
+                ScaleChannelId.Unknown)
+            {
+                result.Add(
+                    nameof(settings.ChannelId),
+                    "ChannelId is invalid.");
+            }
+
             if (string.IsNullOrWhiteSpace(
                 settings.SerialPort.PortName))
             {
