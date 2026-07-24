@@ -73,10 +73,12 @@
     <Compile Include="Protocols\FrameDetectors\CarriageReturnFrameDetector.cs" />
     <Compile Include="Protocols\FrameDetectors\CarriageReturnStartOfHeadingFrameDetector.cs" />
     <Compile Include="Protocols\FrameDetectors\CommaFrameDetector.cs" />
+    <Compile Include="Protocols\FrameDetectors\LD5218FrameDetector.cs" />
     <Compile Include="Protocols\FrameDetectors\LineFeedCarriageReturnFrameDetector.cs" />
     <Compile Include="Protocols\GammaProtocol.cs" />
     <Compile Include="Protocols\Interfaces\IFrameDetector.cs" />
     <Compile Include="Protocols\Interfaces\IScaleProtocol.cs" />
+    <Compile Include="Protocols\LD5218Protocol.cs" />
     <Compile Include="Protocols\ScaleProtocolRegistry.cs" />
     <Compile Include="Protocols\ScaleProtocolBase.cs" />
     <Compile Include="Protocols\TBProtocol.cs" />
