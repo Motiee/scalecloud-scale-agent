@@ -69,13 +69,17 @@
     <Compile Include="Model\SerialPortSettings.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Protocols\AlphaProtocol.cs" />
     <Compile Include="Protocols\FrameDetectors\CarriageReturnFrameDetector.cs" />
     <Compile Include="Protocols\FrameDetectors\CarriageReturnStartOfHeadingFrameDetector.cs" />
+    <Compile Include="Protocols\FrameDetectors\CommaFrameDetector.cs" />
+    <Compile Include="Protocols\FrameDetectors\LineFeedCarriageReturnFrameDetector.cs" />
     <Compile Include="Protocols\GammaProtocol.cs" />
     <Compile Include="Protocols\Interfaces\IFrameDetector.cs" />
     <Compile Include="Protocols\Interfaces\IScaleProtocol.cs" />
     <Compile Include="Protocols\ScaleProtocolRegistry.cs" />
     <Compile Include="Protocols\ScaleProtocolBase.cs" />
+    <Compile Include="Protocols\TBProtocol.cs" />
     <Compile Include="Protocols\Toledo8142Protocol.cs" />
     <Compile Include="ScalePort.cs" />
     <Compile Include="Serial\ByteReceivedEventArgs.cs" />
