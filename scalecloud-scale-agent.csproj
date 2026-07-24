@@ -73,6 +73,7 @@
     <Compile Include="Protocols\FrameDetectors\CarriageReturnFrameDetector.cs" />
     <Compile Include="Protocols\FrameDetectors\CarriageReturnStartOfHeadingFrameDetector.cs" />
     <Compile Include="Protocols\FrameDetectors\CommaFrameDetector.cs" />
+    <Compile Include="Protocols\FrameDetectors\FrameDetector.cs" />
     <Compile Include="Protocols\FrameDetectors\LD5218FrameDetector.cs" />
     <Compile Include="Protocols\FrameDetectors\LineFeedCarriageReturnFrameDetector.cs" />
     <Compile Include="Protocols\GammaProtocol.cs" />
@@ -83,6 +84,7 @@
     <Compile Include="Protocols\ScaleProtocolBase.cs" />
     <Compile Include="Protocols\TBProtocol.cs" />
     <Compile Include="Protocols\Toledo8142Protocol.cs" />
+    <Compile Include="Protocols\YaohuaProtocol.cs" />
     <Compile Include="ScalePort.cs" />
     <Compile Include="Serial\ByteReceivedEventArgs.cs" />
     <Compile Include="Serial\ISerialReader.cs" />
