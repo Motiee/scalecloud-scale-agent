@@ -1,4 +1,5 @@
-﻿using System;
+﻿using scalecloud_scale_agent.Model;
+using System;
 using System.IO.Ports;
 
 namespace scalecloud_scale_agent.Serial
@@ -20,30 +21,33 @@ namespace scalecloud_scale_agent.Serial
 
         public event Action<Exception> Error;
 
-        public void Start(
-         string portName,
-         int baudRate,
-         Parity parity,
-         int dataBits,
-         StopBits stopBits)
+        public void Start(SerialPortSettings settings)
         {
             Stop();
 
             try
             {
                 _serialPort = new SerialPort();
+                _serialPort.PortName = settings.PortName;
 
-                _serialPort.PortName = portName;
-                _serialPort.BaudRate = baudRate;
-                _serialPort.Parity = parity;
-                _serialPort.DataBits = dataBits;
-                _serialPort.StopBits = stopBits;
+                _serialPort.BaudRate = settings.BaudRate;
 
-                _serialPort.ReadTimeout = 500;
-                _serialPort.WriteTimeout = 500;
+                _serialPort.Parity = settings.Parity;
 
-                _serialPort.Open();
+                _serialPort.DataBits = settings.DataBits;
+
+                _serialPort.StopBits = settings.StopBits;
+
+                _serialPort.DtrEnable = settings.DtrEnable;
+
+                _serialPort.RtsEnable = settings.RtsEnable;
+
+                _serialPort.ReadTimeout = settings.ReadTimeout;
+
                 _serialPort.DataReceived += OnDataReceived;
+                
+                _serialPort.Open();
+
             }
             catch (Exception ex)
             {
@@ -57,11 +61,18 @@ namespace scalecloud_scale_agent.Serial
         {
             try
             {
-                _serialPort.DataReceived -= OnDataReceived;
-
-                if (_serialPort.IsOpen)
+                if (_serialPort != null)
                 {
-                    _serialPort.Close();
+                    _serialPort.DataReceived -= OnDataReceived;
+
+                    if (_serialPort.IsOpen)
+                    {
+                        _serialPort.Close();
+                    }
+
+                    _serialPort.Dispose();
+
+                    _serialPort = null;
                 }
             }
             catch
@@ -74,17 +85,17 @@ namespace scalecloud_scale_agent.Serial
             Stop();
         }
 
-        private void OnDataReceived(
-    object sender,
-    SerialDataReceivedEventArgs e)
+        private void OnDataReceived(object sender,SerialDataReceivedEventArgs e)
         {
             try
             {
-                while (_serialPort != null &&
-                       _serialPort.IsOpen &&
-                       _serialPort.BytesToRead > 0)
+                SerialPort port = _serialPort;
+                if (port == null) return;
+                while (port != null &&
+                       port.IsOpen &&
+                       port.BytesToRead > 0)
                 {
-                    int value = _serialPort.ReadByte();
+                    int value = port.ReadByte();
 
                     if (value >= 0)
                     {

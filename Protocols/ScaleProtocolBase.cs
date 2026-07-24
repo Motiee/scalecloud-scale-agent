@@ -12,6 +12,8 @@ public abstract class ScaleProtocolBase: IScaleProtocol
 
     public abstract string Id { get; }
 
+    public abstract decimal? PrevWeight { set; get; }
+
     public abstract string DisplayName { get; }
 
     public bool Push(byte value, out ScaleData data)
@@ -20,8 +22,7 @@ public abstract class ScaleProtocolBase: IScaleProtocol
 
         byte[] frame;
 
-        if (!_frameDetector.Push(value, out frame))
-            return false;
+        if (!_frameDetector.Push(value, out frame)) return false;
 
         return ParseFrame(frame, out data);
     }

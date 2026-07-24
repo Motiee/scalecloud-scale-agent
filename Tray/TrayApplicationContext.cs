@@ -14,13 +14,16 @@ namespace scalecloud_scale_agent.Tray
 
         private readonly IScaleManager _scaleManager;
 
+        private SettingsForm _settingsForm;
+
         public TrayApplicationContext(
             IScaleManager scaleManager)
         {
             _scaleManager = scaleManager;
 
             _server = new WebSocketHost();
-
+            
+            
             try
             {
                 _scaleManager.LoadSettings();
@@ -47,16 +50,17 @@ namespace scalecloud_scale_agent.Tray
 
             _notifyIcon = new NotifyIcon
             {
-                Icon = SystemIcons.Information,
+                Icon =Properties.Resources.RS323_32x32,
                 Visible = true,
                 Text = "Scale Agent",
                 ContextMenuStrip = menu
             };
+
+            _notifyIcon.DoubleClick += NotifyIcon_DoubleClick;
+
         }
 
-        private void OnExit(
-            object sender,
-            EventArgs e)
+        private void OnExit(object sender,EventArgs e)
         {
             try
             {
@@ -73,6 +77,20 @@ namespace scalecloud_scale_agent.Tray
             _notifyIcon.Visible = false;
 
             Application.Exit();
+        }
+
+        private void NotifyIcon_DoubleClick(object sender,EventArgs e)
+        {
+            if (_settingsForm == null ||
+                _settingsForm.IsDisposed)
+            {
+                _settingsForm =
+                    new SettingsForm(_scaleManager);
+            }
+
+            _settingsForm.Show();
+            _settingsForm.BringToFront();
+            _settingsForm.Activate();
         }
     }
 }

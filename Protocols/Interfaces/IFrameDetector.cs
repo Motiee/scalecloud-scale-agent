@@ -9,6 +9,7 @@ namespace scalecloud_scale_agent.Protocols.Interfaces
     public interface IFrameDetector
     {
         bool Push(byte value,out byte[] frame);
+  
 
         void Reset();
     }

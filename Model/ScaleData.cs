@@ -6,20 +6,22 @@ using System.Threading.Tasks;
 
 namespace scalecloud_scale_agent.Model
 {
-    public class ScaleData
+    public  class ScaleData
     {
-        public decimal? Weight { get; set; }
+        public  decimal? Weight { get; set; }
 
-        public bool Stable { get; set; }
+        public  bool Stable { get; set; }
 
-        public DateTime Time { get; set; }
+        public  DateTime Time { get; set; }
 
-        public string RawFrame { get; set; }     // برای Debug
+        public  string RawFrame { get; set; }     // برای Debug
 
-        public byte[] RawBytes { get; set; }     // برای ذخیره لاگ
+        public string Unit { get; set; }     
 
-        public bool IsValid { get; set; }        // نتیجه Parse
+        public  byte[] RawBytes { get; set; }     // برای ذخیره لاگ
 
-        public string Error { get; set; }        // علت خطا
+        public  bool IsValid { get; set; }        // نتیجه Parse
+
+        public  string Error { get; set; }        // علت خطا
     }
 }

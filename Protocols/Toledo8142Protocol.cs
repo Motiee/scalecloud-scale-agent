@@ -9,6 +9,8 @@ public class Toledo8142Protocol : ScaleProtocolBase
 
     public override string DisplayName => "Toledo 8142";
 
+    public override decimal? PrevWeight { get ; set ; }
+
     public Toledo8142Protocol():base (new CarriageReturnFrameDetector()) {}
     protected override bool ParseFrame(byte[] frame, out ScaleData data)
     {
@@ -28,9 +30,11 @@ public class Toledo8142Protocol : ScaleProtocolBase
         data = new ScaleData
         {
             Weight = weight,
-            Stable = true,
+            Stable = (PrevWeight==weight),
             Time = DateTime.Now
         };
+        
+        PrevWeight = data.Weight;
 
         return true;
     }

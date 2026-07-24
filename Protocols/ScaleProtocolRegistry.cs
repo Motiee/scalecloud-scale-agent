@@ -8,37 +8,77 @@ namespace scalecloud_scale_agent.Protocols
 {
     public static class ScaleProtocolRegistry
     {
-        private static readonly Dictionary<string, Type> _protocols;
+        private static readonly Dictionary<string, Type>
+            _protocols =
+                new Dictionary<string, Type>(
+                    StringComparer.OrdinalIgnoreCase);
 
         static ScaleProtocolRegistry()
         {
-            _protocols = Assembly
-                .GetExecutingAssembly()
-                .GetTypes()
-                .Where(t =>
-                    typeof(IScaleProtocol).IsAssignableFrom(t) &&
-                    !t.IsInterface &&
-                    !t.IsAbstract)
-                .Select(t => (IScaleProtocol)Activator.CreateInstance(t))
-                .ToDictionary(
-                    p => p.Id,
-                    p => p.GetType());
+            RegisterAllProtocols();
         }
 
-        public static IReadOnlyList<IScaleProtocol> GetProtocols()
+        private static void RegisterAllProtocols()
         {
-            return _protocols.Values
-                .Select(t => (IScaleProtocol)Activator.CreateInstance(t))
-                .OrderBy(p => p.DisplayName)
+            Assembly assembly =
+                typeof(ScaleProtocolRegistry).Assembly;
+
+            var protocolTypes =
+                assembly
+                    .GetTypes()
+                    .Where(t =>
+                        !t.IsAbstract &&
+                        typeof(IScaleProtocol)
+                            .IsAssignableFrom(t));
+
+            foreach (Type type in protocolTypes)
+            {
+                IScaleProtocol protocol =
+                    (IScaleProtocol)
+                    Activator.CreateInstance(type);
+
+                if (_protocols.ContainsKey(protocol.Id))
+                {
+                    throw new InvalidOperationException(
+                        $"Duplicate Protocol Id: {protocol.Id}");
+                }
+
+                _protocols.Add(
+                    protocol.Id,
+                    type);
+            }
+        }
+
+        public static IScaleProtocol Create(
+            string protocolId)
+        {
+            if (string.IsNullOrWhiteSpace(protocolId))
+            {
+                throw new ArgumentException(
+                    "ProtocolId is empty.",
+                    nameof(protocolId));
+            }
+
+            if (!_protocols.TryGetValue(
+                protocolId,
+                out Type type))
+            {
+                throw new InvalidOperationException(
+                    $"Protocol '{protocolId}' not found.");
+            }
+
+            return (IScaleProtocol)
+                Activator.CreateInstance(type);
+        }
+
+        public static IReadOnlyList<IScaleProtocol> GetAll()
+        {
+            return _protocols
+                .Values
+                .Select(t =>
+                    (IScaleProtocol)
+                    Activator.CreateInstance(t))
                 .ToList();
-        }
-
-        public static IScaleProtocol Create(string id)
-        {
-            if (!_protocols.TryGetValue(id, out var type))
-                throw new Exception($"Unknown protocol : {id}");
-
-            return (IScaleProtocol)Activator.CreateInstance(type);
         }
     }
 }

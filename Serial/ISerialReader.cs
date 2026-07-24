@@ -1,4 +1,5 @@
-﻿using System;
+﻿using scalecloud_scale_agent.Model;
+using System;
 
 namespace scalecloud_scale_agent.Serial
 {
@@ -10,12 +11,7 @@ namespace scalecloud_scale_agent.Serial
 
         event Action<Exception> Error;
 
-        void Start(
-            string portName,
-            int baudRate,
-            System.IO.Ports.Parity parity,
-            int dataBits,
-            System.IO.Ports.StopBits stopBits);
+        void Start(SerialPortSettings settings);
 
         void Stop();
     }
