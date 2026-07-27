@@ -80,6 +80,7 @@
     <Compile Include="Protocols\Interfaces\IFrameDetector.cs" />
     <Compile Include="Protocols\Interfaces\IScaleProtocol.cs" />
     <Compile Include="Protocols\LD5218Protocol.cs" />
+    <Compile Include="Protocols\OmegaProtocol.cs" />
     <Compile Include="Protocols\ScaleProtocolRegistry.cs" />
     <Compile Include="Protocols\ScaleProtocolBase.cs" />
     <Compile Include="Protocols\TBProtocol.cs" />
